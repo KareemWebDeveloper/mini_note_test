@@ -1,0 +1,52 @@
+1: Task: Create a Mini Notes Application
+
+Objective:
+Develop a simple Vue.js application to manage notes with basic CRUD operations.
+
+2 - Project Setup:
+
+Use Vue 3 with Composition API.
+
+Use Vuex for state management.
+
+Use Vue Router for navigation.
+
+Set up the project with Vue CLI.
+
+
+3-Requirements : 
+Task List Functionality:
+
+>Create a form to add new tasks (title and description).
+>Display a list of tasks dynamically.
+   Each task should have the following actions:
+>Edit: Update the title or description of the task.
+>Delete: Remove the task.
+>Toggle Status: Mark a task as completed/incomplete.
+Filtering and Searching:
+
+>Add a search bar to filter tasks by title.
+Provide a filter to view tasks based on their status (All, Completed, Pending).
+
+
+
+
+4-State Management:
+
+>Use Vuex (or Pinia) for managing application state.
+Styling:
+
+>Use any CSS framework (e.g., Tailwind CSS, Bootstrap) or write custom CSS for a clean and responsive UI.
+
+
+Routing:
+
+>Use Vue Router to create two views:
+>Task Management: The main page with the list and form.
+About Page: A simple page with information about the app (static content).
+
+
+
+API Integration (Optional for Bonus Points):
+
+>Simulate CRUD operations using a JSON placeholder API or a mock server (e.g., json-server or MirageJS).

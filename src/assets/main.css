@@ -1,0 +1,225 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+:root {
+  --tw-bg-opacity : 1;
+  --background-color : #f3f3f1;
+  --primary-color : rgb(129 41 217 / var(--tw-bg-opacity));
+  --secondary-color : #F0EC0F;
+  --inactive-color : rgba(255, 255, 255, 0.4);
+  --primary-border-radius : 25px;
+  --fk-border-radius : 25px !important;
+  --primary-font : "Manrope", sans-serif !important;
+  --fk-font-family-input : "Manrope", sans-serif !important;
+  --text-color : black;
+  --links-bg-color :rgb(31, 35, 46);
+  --links-text-color : #FFFFFF;
+  --bg-color : #f3f3f1;
+  --hover-color : rgba(1,172,196,255);
+  --icons-color : rgb(65, 65, 65);
+}
+
+.font-thin {
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.font-extralight {
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.font-light {
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.font-regular {
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-semibold {
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.font-bold {
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-extrabold {
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.font-black {
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.p-button{
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 400;
+}
+
+p{
+  color: #676b5f;
+}
+.p-dialog .p-dialog-header {
+  border-top-right-radius: var(--primary-border-radius) !important;
+  border-top-left-radius: var(--primary-border-radius) !important;
+}
+
+
+.p-dialog .p-dialog-content:last-of-type {
+  border-bottom-right-radius: var(--primary-border-radius) !important;
+  border-bottom-left-radius: var(--primary-border-radius) !important;
+}
+
+.formkit-outer .formkit-icon svg {
+  width: 1.5rem;
+}
+.formkit-move-up-icon svg{
+  width: 1rem !important;
+}
+.formkit-move-down-icon svg{
+  width: 1rem !important;
+}
+.formkit-remove-icon svg{
+  width: 1.4rem !important;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f153;
+}
+
+.container-shadow{
+  box-shadow: -5px 2px 10px rgba(0, 0, 0, 0.082);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* formkit styling */
+.inputsMargin{
+  margin: 3.5vh 0 !important;
+}
+.unrounded-input{
+  --fk-border-radius : 10px !important;
+}
+.formkit-label {
+  font-family: var(--primary-font) !important;
+}
+
+.formkit-outer .formkit-icon.formkit-prefix-icon {
+  border-radius: 25px !important;
+}
+.formkit-message{
+  text-align: end;
+  padding: .5rem 0 !important;
+  font-family: var(--primary-font);
+}
+[data-invalid] .formkit-inner {
+  border-color: red !important;
+  box-shadow: 0 0 0 1px red !important;
+}
+.formkit-wrapper{
+  max-width: none !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.pageLayout{
+  margin: 0 1rem;
+}
+
+.primary{
+  color: var(--primary-color) !important;
+}
+.secondary{
+  color: var(--secondary-color);
+}
+.primaryBg{
+  background-color: var(--primary-color);
+}
+.secondaryBg{
+  background-color: var(--secondary-color) !important;
+}
+.inactiveColor{
+  color: var(--inactive-color);
+}
+.secondaryHover{
+  transition-duration: .2s;
+}
+.secondaryHover:hover{
+  color: var(--secondary-color);
+}
+.primaryHover{
+  transition-duration: .2s;
+}
+.primaryHover:hover{
+  color: var(--primary-color);
+}
+.primaryHoverBg{
+  border: .5px solid #6E7080 !important;
+  transition-duration: .2s;
+}
+.primaryHoverBg:hover{
+  background-color: var(--primary-color);
+  color: white;
+  border: .5px solid var(--primary-color) !important;
+}
+.inactiveBg{
+  background-color: var(--inactive-color);
+}
+
+body {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-style: normal;
+}
+.circularBorder{
+  border-radius: 20px !important;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 24
+}
+.borderRound{
+  border-radius: var(--primary-border-radius) !important;
+}
+.bg-card{
+  background-color: var(--bg-card);
+}
