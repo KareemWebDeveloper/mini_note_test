@@ -3,15 +3,19 @@ import { defineStore } from 'pinia'
 import { useDialog } from 'primevue/usedialog';
 import NoteEditing from '@/components/dialogs/NoteEditing.vue';
 import type { Note } from '@/types/types';
+import { useToast } from "primevue/usetoast";
 
 export const useNoteStore = defineStore('note', () => {
   const dialog = useDialog()
+  const toast = useToast();
+
 
   const deleteNote = (id : string , callBackFn : Function) => {
     let notesMap = localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')!) : {}
     delete notesMap[id]
     localStorage.setItem('notes', JSON.stringify(notesMap))
     callBackFn()
+    toast.add({ severity: 'success', summary: 'Deleted!', detail: 'Note has been deleted successfully.', life: 3000 });
   }
 
   const updateStatus = (id : string , callBackFn : Function) => {
@@ -32,6 +36,7 @@ export const useNoteStore = defineStore('note', () => {
           },
           onClose : (option) => {
             callBackFn()
+            toast.add({ severity: 'success', summary: 'Saved!', detail: 'Note has been saved successfully.', life: 3000 });
           },
           data: {
             ...Note
