@@ -7,10 +7,11 @@ import type { Note } from '@/types/types';
 export const useNoteStore = defineStore('note', () => {
   const dialog = useDialog()
 
-  const deleteNote = (id : string) => {
+  const deleteNote = (id : string , callBackFn : Function) => {
     let notesMap = localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')!) : {}
     delete notesMap[id]
     localStorage.setItem('notes', JSON.stringify(notesMap))
+    callBackFn()
   }
 
   const updateStatus = (id : string , callBackFn : Function) => {

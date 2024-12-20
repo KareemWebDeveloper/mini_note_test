@@ -13,7 +13,6 @@ const noteDescription = ref(dialogRef.value.data && dialogRef.value.data.noteDes
 const saveNote = () => {
     const notes : Record<string , Note>  = JSON.parse(localStorage.getItem('notes') || '{}');
     const id = noteId.value ? noteId.value : Object.keys(notes).length + 1 + noteTitle.value
-    console.log(id);
     notes[id] = {
         id: id,
         noteTitle : noteTitle.value,

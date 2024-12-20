@@ -10,7 +10,6 @@ import Button from 'primevue/button';
 import { useNoteStore } from '@/stores/Note';
 import type { Note } from '@/types/types';
 import Tag from 'primevue/tag';
-import MultiSelect from 'primevue/multiselect';
 import Select from 'primevue/select';
 const noteStore = useNoteStore()
 const filters = ref({
@@ -33,16 +32,9 @@ onMounted(() => {
 const refreshNotes = () => {
   let notesMap = localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')!) : {}
   notes.value = Object.values(notesMap)
-  console.log(notes.value);
-}
-
-const deleteNote = (id : string) => {
-  noteStore.deleteNote(id)
-  refreshNotes()
 }
 
 </script>
-
 <template>
   <div class="p-3">
     
@@ -78,7 +70,7 @@ const deleteNote = (id : string) => {
         <Column header="Actions" style="width : 35%">
           <template #body="slotProps">
               <div class="flex gap-2 align-items-center">
-                <Button @click="deleteNote(slotProps.data.id)" icon="pi pi-trash"></Button>
+                <Button @click="noteStore.deleteNote(slotProps.data.id, refreshNotes)" icon="pi pi-trash"></Button>
                 <Button @click="noteStore.openNoteEditingDialog(refreshNotes , slotProps.data)" icon="pi pi-pencil"></Button>
                 <Button @click="noteStore.updateStatus(slotProps.data.id ,  refreshNotes);" severity="success" label="Mark As Completed" v-if="slotProps.data.noteStatus === 'pending'" icon="pi pi-check-circle"></Button>
                 <Button @click="noteStore.updateStatus(slotProps.data.id ,  refreshNotes);" v-else label="Return To Pending" icon="pi pi-refresh"></Button>
@@ -86,6 +78,5 @@ const deleteNote = (id : string) => {
           </template>
         </Column>
     </DataTable>
-    
   </div>
 </template>
