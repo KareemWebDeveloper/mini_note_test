@@ -42,7 +42,7 @@ const refreshNotes = () => {
      :rowsPerPageOptions="[5, 10, 20, 50]" tableStyle="min-width: 50rem">
         <template #header>
           <div class="flex p-3 align-items-center justify-content-between">
-              <h2 class="text-center mb-3">Mini Note</h2>
+              <h2 class="text-center">Mini Note</h2>
               
               <div class="flex align-items-center gap-2">
                 <IconField>

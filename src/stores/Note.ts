@@ -24,6 +24,7 @@ export const useNoteStore = defineStore('note', () => {
     localStorage.setItem('notes', JSON.stringify(notesMap))
     callBackFn();
   }
+
   
   const openNoteEditingDialog = ( callBackFn : Function , Note? : Note) => {
       dialog.open(NoteEditing, {
@@ -36,7 +37,6 @@ export const useNoteStore = defineStore('note', () => {
           },
           onClose : (option) => {
             callBackFn()
-            toast.add({ severity: 'success', summary: 'Saved!', detail: 'Note has been saved successfully.', life: 3000 });
           },
           data: {
             ...Note

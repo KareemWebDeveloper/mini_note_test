@@ -5,6 +5,8 @@ import IconField from "primevue/iconfield";
 import InputIcon from "primevue/inputicon";
 import InputText from "primevue/inputtext";
 import { inject, ref } from "vue";
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
 const dialogRef: any = inject('dialogRef');
 const noteId = ref(dialogRef.value.data && dialogRef.value.data.id ? dialogRef.value.data.id : '');
 const noteTitle = ref(dialogRef.value.data && dialogRef.value.data.noteTitle ? dialogRef.value.data.noteTitle : '');
@@ -20,6 +22,7 @@ const saveNote = () => {
         noteStatus : 'pending'
     }
     localStorage.setItem('notes', JSON.stringify(notes));
+    toast.add({ severity: 'success', summary: 'Saved!', detail: 'Note has been saved successfully.', life: 3000 });
 }
 
 
